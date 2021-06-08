@@ -1,0 +1,16 @@
+4)SELECT AVG(e.salary)  FROM EMPLOYEE E
+join EMPLOYEE s on s.employee_id=e.manager_id
+
+3)select e.department_id,ABS(AVG(e.salary)-(select AVG(e.salary) from EMPLOYEE e)) as avg_sal FROM EMPLOYEE e
+group by e.department_id
+order by avg_sal ASC
+ 
+
+1)SELECT AVG(e.salary) FROM EMPLOYEE e  
+JOIN [LOCATION] s on s.location_id=e.salary 
+
+
+SELECT * FROM PRODUCT P JOIN PRICE PR ON P.product_id = PR.product_id JOIN ITEM I ON P.product_id = I.product_id JOIN SALES_ORDER S ON I.order_id = S.order_id
+JOIN CUSTOMER C ON S.customer_id = C.customer_id JOIN EMPLOYEE E ON C.salesperson_id = E.employee_id WHERE E.first_name = UPPER('LEWIS') OR E.last_name = UPPER('LEWIS')
+
+SELECT * FROM EMPLOYEE E WHERE E.first_name = UPPER('LEWIS') OR E.last_name = UPPER('LEWIS') 
